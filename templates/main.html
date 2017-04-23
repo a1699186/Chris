@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>GitHub Extraction</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]>
+</head>
+
+
+<body>
+  <input onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="input1">
+
+  <input type="button" onclick="location.href=window.location.protocol + '//' + window.location.host + '/'+document.getElementById('input1').value;" value= "Random number check" />
+
+  {% if pros %}
+    <table border="1">
+      <tr>
+      <td>ID</td>
+      <td>Project Name</td>
+      <td>URLs</td>
+      <td>Pictures</td>
+      </tr>
+    {% endif %}
+    {% for pro in pros %}
+      <tr>
+      <td>{{ pro[0] }}</td>
+      <td>{{ pro[1] }}</td>
+      <td>{{ pro[2][0] }}</td>
+      <td>{{ pro[2][1] }}</td>
+      </tr>
+    {% endfor %}
+    {% if pros %}
+    </table>
+  {% endif %}
+
+
+
+</body>
+
+</html>
