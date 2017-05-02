@@ -1,0 +1,2 @@
+ssh -i "ckey.pem" ubuntu@ec2-35-154-89-255.ap-south-1.compute.amazonaws.com
+python manage.py runserver 0.0.0.0:8000

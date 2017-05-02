@@ -1,49 +1,113 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>GitHub Extraction</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-  <[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]>
-</head>
 
 
-<body>
-  <input onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="input1">
+{% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='mystyle.css')}}">
+<!-- Optional theme -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <input type="button" onclick="location.href=window.location.protocol + '//' + window.location.host + '/'+document.getElementById('input1').value;" value= "Random number check" />
+{% endblock %}
 
-  {% if pros %}
-    <table border="1">
-      <tr>
-      <td>ID</td>
-      <td>Project Name</td>
-      <td>URLs</td>
-      <td>Pictures</td>
-      </tr>
-    {% endif %}
-    {% for pro in pros %}
-      <tr>
-      <td>{{ pro[0] }}</td>
-      <td>{{ pro[1] }}</td>
-      <td>{{ pro[2][0] }}</td>
-      <td>{{ pro[2][1] }}</td>
-      </tr>
-    {% endfor %}
-    {% if pros %}
-    </table>
-  {% endif %}
+{% block scripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{{url_for('.static', filename='myscripts.js')}}"></script>
+{% endblock %}
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <h2>Github Readme analysis</h2>
+    </div>
+  </div>
+</nav>
+
+	<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <input type="number" name="num" id="num" placeholder="Numbers of Readme File to Fetch" class="form-control"/>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" value="Submit" class="btn btn-primary" onclick="submit()"> Submit </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+  		<br><br>
+
+	    <table border="1" id="t1" class="table">
+	    	<tr>
+		      	<td>ID</td>
+		      	<td>Project Name</td>
+		      	<td>URL</td>
+		      	<td>Picture</td>
+		      	<td>Heading</td>
+	      	</tr>
+	    
+		{% for i in pros %}
+			{% if i.id %}
+				<tr>	
+					<td>{{ i.id }}</td>
+					<td>{{ i.name }}</td>
+					<td>{{ i.url }}</td>
+					<td>{{ i.pic }}</td>
+					<td>{{ i.heading }}</td>
+					
+				</tr>
+			{% endif %}	
+		{% endfor %}
+		</table>
+	
+		
+		<br>
+		<table>
+			<tr>
+				<td>Description</td>
+				<td>Number</td>
+			</tr>
+		{% for i in pros %}
+			{% if i.id %}
+			{% else %}
+				
+				{% for j in i %}
+					{% autoescape off %}
+					<tr>
+						{{j}}
+					</tr>
+					{% endautoescape %}
+					<!-- <div id="heading">{{j}}</div> -->
+			
+				{% endfor %}	
+				
+			{% endif %}	
+		{% endfor %}
+		</table>
+
+    </div>
+
+	</body>
 
 
 
-</body>
+<script type="text/javascript">
+	// window.onload=formatHeading(); //仅需要加这一句
+	function formatHeading(){
+		var headingContents = document.getElementById("heading").innerHTML;
+		headingContents=headingContents.replace(/{&#39; /, "<br>");
+		headingContents=headingContents.replace(/{&#39; /, ": ");
 
-</html>
+		headingContents=headingContents.replace(/, ' /, "<br>");
+		headingContents=headingContents.replace(/}/, "");
+		document.getElementById("heading").innerHTML = headingContents;
+
+	}
+    function submit(){
+    	var number = document.getElementById('num').value;
+    	var url = document.URL.replace(/\?num=(.*)/, "");
+    	location.href=url+'?num='+number;
+    }
+</script>
