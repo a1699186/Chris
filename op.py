@@ -6,7 +6,6 @@ class Operator(object):
     def _getReadme(self, name,auth=None):
         import requests
         
-		#Link with GitHub API
         get_url = ''.join(["https://api.github.com/repos/",name,"/readme"])
 
         # user_agent = {'User-agent': 'Awesome-Octocat-App'}
@@ -14,7 +13,6 @@ class Operator(object):
         r = requests.get(get_url,auth=('a1699186', '1699186a'))
 
         # return r
-		#Fetch README file's URL
         if "download_url" in r.json():
             url = (r.json()['download_url'])
             r_readme = r = requests.get(url)
@@ -22,8 +20,7 @@ class Operator(object):
             return r_readme.text
         else:
             return None
-	
-	#Extract clickable URL within the README
+
     def getURL(self, text,auth=None):
         import re
 
@@ -33,8 +30,7 @@ class Operator(object):
         finding = re.findall(r"[^\!]\[[\s\S]*?\]\([\s\S]*?\)",text)
         return len(finding)
         # return text
-	
-	#Extract clickable picture within the README
+
     def getPic(self, text,auth=None):
         import re
 
@@ -46,7 +42,6 @@ class Operator(object):
 
         return len(finding)
 
-	# Extract heading
     def getHeading(self, text,auth=None):
         import re
 
@@ -56,18 +51,15 @@ class Operator(object):
 
         finding = re.findall(r"[\#]+[\s]+[\s\S]*?\n",text)
 
-		# Need to really filter up the sectin heading only. Current issue faced is extracting all the words that start with #.
         # need further process, e.g. [heading](http....)
         return len(finding)
 
-	#Fetch random project ID from GitHub
     def getProject(self, number,auth=None):
         import random
         import requests
 
         test = set()
         ret = []
-		#Search the project ID within 1-70000000
         for i in range(number):
             id = random.randint(1, 70000000)
             url = ''.join(["https://api.github.com/repositories?since=",str(id)])
@@ -75,8 +67,7 @@ class Operator(object):
 
             ret.append([r.json()[0]["full_name"].split('/'),r.json()[0]['id']])
         return ret
-	
-	#Aggregate the section heading. Create the list
+
     def getHeadingContents(self, text,auth=None):
         global wholeHeadings
         
@@ -96,7 +87,7 @@ class Operator(object):
 
             return wholeHeadings
        
-	#Print result
+
     def getResult(self, number=None,auth=None):
         global wholeHeadings
         wholeHeadings = []
