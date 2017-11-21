@@ -1,0 +1,180 @@
+
+
+{% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='mystyle.css')}}">
+<!-- Optional theme -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{{url_for('.static', filename='myscripts.js')}}"></script>
+{% endblock %}
+
+<!--<nav class="navbar navbar-default">
+
+      <div class="container-fluid">
+        <div class="navbar-header">
+           <!-- <a href="http://github.com"> <img src="github-1.png" alt="GitHub" width=40% height=10%></a>
+             <h2 style="text-align: center">GITHUB README ANALYSIS</h2>
+        </div>
+      </div>
+
+</nav>-->
+
+<nav class="navbar navbar-default">
+    <div>
+    <!--<a href="http://github.com"> <img src="github-1.png" alt="GitHub" width=40% height=10%></a>-->
+    <h2 style="text-align: center">--- GITHUB README ANALYSIS ---</h2>
+    </div>
+</nav>
+
+
+
+	<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <input type="number" oninput="checkNumer()" name="num" id="num" placeholder="Numbers of Readme File to Fetch. Key in only positive number" class="form-control"/>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" onclick="location.href=window.location.protocol + '//' + window.location.host + '/'+document.getElementById('num').value;" class="btn btn-primary" >Submit</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+  		<br><br>
+
+	    <table border="1" id="t1" class="table1" style="text-align: center">
+	    	<tr>
+	    		<td style="background-color: #4CAF50;color: white"><b>NO.</b></td>
+		      	<td style="background-color: #4CAF50;color: white"><b>Project ID</b></td>
+		      	<td style="background-color: #4CAF50;color: white"><b>Project Name</b></td>
+                <td style="background-color: #4CAF50;color: white"><b>Total Heading</b></td>
+                <td style="background-color: #4CAF50;color: white"><b>Total Picture</b></td>
+		      	<td style="background-color: #4CAF50;color: white"><b>Total URL</b></td>
+
+	      	</tr>
+	    
+		{% for i in pros %}
+			{% if i.id %}
+				<tr>
+					<td>{{ i.no }}</td>	
+					<td>{{ i.id }}</td>
+					<td><a target="_blank" href="https://github.com/{{ i.name }}">{{ i.name }}</a></td>
+
+                    {% if i.heading or i.heading==0 %}
+					<td>{{ i.heading }}</td>
+                         {% else %}
+                            <td>Empty</td>
+                         {% endif %}
+
+                    {% if i.pic or i.pic==0 %}
+					<td>{{ i.pic }}</td>
+                         {% else %}
+                            <td>Empty</td>
+                         {% endif %}
+
+                    {% if i.urlNum or i.urlNum==0 %}
+					<td onclick="showURL({{ i.id }})">{{ i.urlNum }}</td>
+                        {% else %}
+                        <td onclick="showURL({{ i.id }})">Empty</td>
+                        {% endif %}
+				
+					
+				</tr>
+			{% endif %}	
+		{% endfor %}
+		</table>
+	
+		
+		<br>
+		<table border="1" id="t2" class="table2">
+			<tr>
+				<td style="background-color: #4CAF50;color: white">List of Section Headings selected</td>
+				<td style="background-color: #4CAF50;color: white;text-align: center">Quantity</td>
+			</tr>
+		{% for i in pros %}
+			{% if i.id %}
+			{% else %}
+				
+				{% for j in i %}
+					{% autoescape off %}
+					<tr>
+						{{j}}
+					</tr>
+					{% endautoescape %}
+					<!-- <div id="heading">{{j}}</div> -->
+			
+				{% endfor %}	
+				
+			{% endif %}	
+		{% endfor %}
+		</table>
+
+
+		<br />
+
+    <!-- This is showing the URL when user click the URL's number-->
+		{% for i in pros %}
+			{% if i.id %}
+				{% if i.urlNum!=None %}
+					{% if i.urlNum!=0 %}
+						<div id="{{ i.id }}" style="display: none">
+                            <div><b>Project ID selected: </b>&nbsp;{{ i.id }}</div>
+							{% for j in i.urlcontents %}
+								<div><a href="{{ j }}">{{ j }}</a></div>
+								
+							{% endfor %}	
+							<br />
+						</div>	
+					{% endif %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		<div id="urlcontainer"></div>
+    </div>
+	</body>
+
+
+<script type="text/javascript">
+	function checkNumer(){
+		var a = document.getElementById("num").value;  
+		if(a<0){
+			document.getElementById("num").value = "";
+		}
+		if(a.indexOf("-")!=-1){
+			document.getElementById("num").value = "";
+		}
+	}
+
+
+	function showURL(id){
+		var contents = document.getElementById(id).innerHTML;
+		document.getElementById('urlcontainer').innerHTML = contents;
+	}
+
+
+
+</script>
+
+
+<style>
+    h2{
+        color: navy;
+        text-align: center;
+    }
+
+    #t2{
+        table-layout:auto;
+    }
+    body{
+        background-image:url("/static/images/landscape-2.jpg");
+    }
+</style>
