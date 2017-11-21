@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.abdul.test">
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".patient"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Profile"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Register"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".maintenance"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".changePassword"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainPatient"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainFoods"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainConsumption"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".addPatient"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".editPatient"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".showPatient"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ShowFoods"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoadingScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoadingScreenGraph"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoadingScreenGraph2"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoadingScreenFoods"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoadingScreenConsumption"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".existingPatient"
+            android:screenOrientation="portrait"/>
+        <activity android:name="BarChartActivity"
+        android:screenOrientation="portrait"/>
+        <activity android:name="PieChartActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AddMeal"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainGraph"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AddFood"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ViewMeals"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Edit_Meal"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainNewsFeed"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".addAdditionalFood"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainMenu">
+        </activity>
+
+	<activity
+            android:name=".Track"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".updateConsumption"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+
+        <receiver
+            android:name=".AlarmReciverGC"
+            android:process=":remote" />
+
+        <service android:name=".GetAlertsService" />
+        <service android:name=".SetMealsAlarmService" />
+
+        <activity android:name=".PID" android:screenOrientation="portrait"></activity>
+    
+
+    </application>
+
+</manifest>

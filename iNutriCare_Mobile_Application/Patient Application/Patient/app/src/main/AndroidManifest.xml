@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.adelaide.cs.abdul.patient">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!--
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MyInutriCare"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AlarmView"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name=".AlarmReciver"
+            android:process=":remote" />
+
+        <activity android:name=".MyMeals" />
+
+
+        <service
+            android:name="com.adelaide.cs.abdul.patient.SetMealsAlarmServiceP"
+             />
+        <!--
+                <receiver
+                    android:name=".CalendarReceiver" android:process=":remote">
+                    <intent-filter>
+                        <action android:name="android.intent.action.EVENT_REMINDER" />
+                        <data android:scheme="content"/>
+                    </intent-filter>
+                </receiver>
+                -->
+
+        <activity android:name=".MealView"></activity>
+    </application>
+
+</manifest>

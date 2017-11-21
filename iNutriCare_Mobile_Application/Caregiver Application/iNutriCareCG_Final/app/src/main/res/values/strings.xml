@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">iNutriCare</string>
+    <string name="register_main"><u>Register</u></string>
+    <color name="themecolor">@android:color/holo_green_dark</color>
+    <string-array name="role">
+        <item>Select a role</item>
+        <item>Care Coordinator</item>
+        <item>Home Support Worker</item>
+    </string-array>
+
+    <string-array name="mealtypes">
+        <item>Select Meal Type</item>
+        <item>BF</item>
+        <item>LN</item>
+        <item>DN</item>
+        <item>SN</item>
+    </string-array>
+    <string name="title_activity_edit__meal">Edit_Meal</string>
+
+    <string-array name="year">
+        <item>Select Year</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+    </string-array>
+
+    <string-array name="month">
+        <item>Select Month</item>
+        <item>JAN</item>
+        <item>FEB</item>
+        <item>MAR</item>
+        <item>APR</item>
+        <item>MAY</item>
+        <item>JUN</item>
+        <item>JUL</item>
+        <item>AUG</item>
+        <item>SEP</item>
+        <item>OKT</item>
+        <item>NOV</item>
+        <item>DEC</item>
+    </string-array>
+
+    <string-array name="graph">
+        <item>Meal Consumption</item>
+        <item>Smart Kitchen Activity</item>
+    </string-array>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<rotate
+        android:duration="800"
+        android:fromDegrees="-5"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="5"
+        android:repeatMode="reverse"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:toDegrees="5" />-->
+    <translate
+        android:fromXDelta="-25"
+        android:toXDelta="25"
+        android:repeatCount="95"
+        android:repeatMode="reverse"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:duration="60" />
+</set>
+<!--<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="6000"
+    android:fromDegrees="-5"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse"
+    android:toDegrees="5" />
+-->
+<!--<set xmlns:android="http://schemas.android.com/apk/res/android" android:shareInterpolator="false">
+    <scale
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:fromXScale="0.0"
+        android:toXScale="1.2"
+        android:fromYScale="0.0"
+        android:toYScale="1.2"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fillAfter="false"
+        android:duration="400" />
+    <set android:interpolator="@android:anim/decelerate_interpolator">
+        <scale
+            android:fromXScale="1.2"
+            android:toXScale="0.8"
+            android:fromYScale="1.2"
+            android:toYScale="0.8"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:startOffset="400"
+            android:duration="400"
+            android:fillBefore="false" />
+    </set>
+</set>-->

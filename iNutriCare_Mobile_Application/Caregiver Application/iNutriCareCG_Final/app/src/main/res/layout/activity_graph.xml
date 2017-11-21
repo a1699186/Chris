@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="1dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="1dp">
+
+        <Button
+            android:id="@+id/VG_bt_patients_List"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="26dp"
+            android:background="@color/ButtonBg"
+            android:text="Select a Patient"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dip"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/spots_dialog_color"/>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="1dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="Patient: "
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+
+                android:id="@+id/VG_patient_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:textColor="@color/spots_dialog_color"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/spots_dialog_color"/>
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/radio_a"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="Monthly"
+                android:textStyle="bold"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_b"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="Yearly"
+                android:textStyle="bold"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingTop="15dp"
+            android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/VG_month"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:paddingTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:entries="@array/month"
+            android:hint="Month"
+            android:spinnerMode="dropdown"/>
+
+            <Spinner
+                android:id="@+id/VG_year"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:paddingTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:entries="@array/year"
+                android:hint="Year"
+                android:spinnerMode="dropdown"
+                android:layout_gravity="right" />
+        </LinearLayout>
+        <Spinner
+            android:id="@+id/VG_graph"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:paddingTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:entries="@array/graph"
+            android:hint="Graph"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/VG_Submit"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/ButtonBg"
+            android:onClick="submitGraph"
+            android:text="Submit"
+            />
+    </LinearLayout>
+</ScrollView>

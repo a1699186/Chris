@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:paddingLeft="15dp" android:paddingRight="15dp" android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Health Care Information"
+            android:id="@+id/tvTitleRegister"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/titles"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="30dp" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/mmse"
+            android:hint="MMSE"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/livestat"
+            android:hint="Living Status"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/careplan"
+            android:hint="Care Plan"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:ems="10"
+            android:hint="Health Condition"
+            android:id="@+id/healthcon"
+            android:onClick="ShowHealthCon"
+            android:focusableInTouchMode="false"
+            android:layout_marginBottom="15dp"
+            android:clickable="false"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:ems="10"
+            android:hint="Allergies"
+            android:id="@+id/allergies"
+            android:onClick="ShowAllergies"
+            android:focusableInTouchMode="false"
+            android:layout_marginBottom="15dp"
+            android:clickable="false"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Register"
+            android:textSize="20dp"
+            android:id="@+id/button_addpat_3"
+            android:onClick="submitpatient"
+            android:background="@color/ButtonBg"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="35dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

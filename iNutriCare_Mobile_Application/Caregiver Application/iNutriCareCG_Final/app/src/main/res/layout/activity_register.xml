@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:paddingLeft="15dp" android:paddingRight="15dp" android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Registration"
+        android:id="@+id/tvTitleRegister"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/titles"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="30dp" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/username2"
+        android:hint="Username"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirmPs"
+        android:hint="Confirm password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:hint="First Name"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:hint="Last Name"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText4"
+        android:hint="Preferred Name"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+        android:ems="10"
+        android:hint="Date Of Birth"
+        android:id="@+id/editText6"
+        android:focusableInTouchMode="false"
+        android:layout_marginBottom="15dp"
+        android:clickable="false"
+        android:layout_gravity="center"/>
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:id="@+id/dropdown"
+        android:hint="Role"
+        android:layout_marginBottom="15dp"
+        android:spinnerMode="dropdown"
+        android:layout_gravity="center"
+        android:entries="@array/role"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText5"
+        android:hint="Site"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Register"
+        android:textSize="20dp"
+        android:id="@+id/button_1"
+        android:background="@color/ButtonBg"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="35dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
+</ScrollView>

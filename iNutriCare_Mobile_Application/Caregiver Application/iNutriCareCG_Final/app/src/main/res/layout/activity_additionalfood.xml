@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:weightSum="1">
+
+    <ScrollView
+        android:id="@+id/scrollViewFilter"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.abdul.test.FlowLayout
+                android:id="@+id/flowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|top"
+                android:minHeight="50dp"></com.example.abdul.test.FlowLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listViewFilter"
+        android:layout_width="match_parent"
+        android:layout_height="332dp"
+        android:background="@android:color/transparent"
+        android:listSelector="@android:color/transparent" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Accept"
+        android:textSize="20dp"
+        android:id="@+id/buttonPatient"
+        android:background="@color/ButtonBg"
+        android:onClick="submitFood"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="25dp"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

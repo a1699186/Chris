@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingBottom="1dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:id="@+id/F_add_food"
+        android:paddingTop="1dp"
+        android:onClick="addFood"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Add Food    "
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="22dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:layout_gravity="center_vertical"
+            android:layout_alignTop="@+id/F_add"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:layout_height="35dp"
+            android:layout_width="35dp"
+            android:background="@drawable/ic_add_circle_black_24dp"
+            android:paddingRight="10dp"
+            android:id="@+id/F_add"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_height="3dip"
+        android:background="@color/dialogplus_card_shadow"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:paddingBottom="1dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="1dp"
+        android:orientation="vertical"
+        android:id="@+id/AM_LL_FoodItemsList_Container">
+
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/Food_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideOverlay"
+            android:nestedScrollingEnabled="true"
+            />
+    </LinearLayout>
+
+</LinearLayout>
