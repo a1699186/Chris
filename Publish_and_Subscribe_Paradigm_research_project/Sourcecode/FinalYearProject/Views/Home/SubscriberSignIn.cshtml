@@ -1,0 +1,47 @@
+﻿@model FinalYearProject.Models.User
+@{
+    ViewBag.Title = "SubscriberPage";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SubscriberSignIn</title>
+</head>
+<body style="text-align:center" class="jumbotron">
+    <h2 style="text-align:center; font-family:Bookman Old Style">Sign in to SUBSCRIBE your latest subscription</h2><br />
+
+    <!--<h6 style="text-align:center; font-style:italic;color:red">
+        *Remember this account is only for subscribe purpose. It will not involve any publication.
+    </h6>-->
+
+    @using (Html.BeginForm("SubscriberSignIn", "Home"))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset style="text-align:center">
+            <legend></legend>
+            <div class="editor-label">
+                <label for="userName">User name :</label><br />
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.userName)
+            </div>
+            <div class="editor-label">
+                <label for="password">Password :</label><br />
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.password)
+            </div>
+
+            <br />
+            <p>
+                <input class="btn btn-success" type="submit" value="Sign In" />
+            </p>
+        </fieldset>
+    }
+
+
+</body>
+</html>

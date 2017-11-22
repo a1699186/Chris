@@ -1,0 +1,98 @@
+﻿@model FinalYearProject.Models.Expression.StockPriceExpression
+@{
+    ViewBag.Title = "SubscriberPage";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>subscribeChooseExpression</title>
+</head>
+<body>
+    @{
+        List<SelectListItem> listItems1 = new List<SelectListItem>();
+        listItems1.Add(new SelectListItem
+             {
+                 Text = "Not",
+                 Value = "Not",
+                 Selected = true
+             });
+    }
+
+    @{
+        List<SelectListItem> listItems2 = new List<SelectListItem>();
+        listItems2.Add(new SelectListItem
+             {
+                 Text = "and",
+                 Value = "and"
+             });
+        listItems2.Add(new SelectListItem
+             {
+                 Text = "or",
+                 Value = "or",
+                 Selected = true
+             });
+        listItems2.Add(new SelectListItem
+             {
+                 Text = "exclusive or",
+                 Value = "exclusive or"
+             });
+    }
+    @{
+        List<SelectListItem> listItems3 = new List<SelectListItem>();
+        listItems3.Add(new SelectListItem
+             {
+                 Text = "more than",
+                 Value = "more than",
+                 Selected = true
+             });
+        listItems3.Add(new SelectListItem
+             {
+                 Text = "equal or less than",
+                 Value = "equal or less than",
+                 Selected = true
+             });
+        listItems3.Add(new SelectListItem
+             {
+                 Text = "equal of more than",
+                 Value = "equal of more than",
+                 Selected = true
+             });
+        listItems3.Add(new SelectListItem
+        {
+            Text = "less than",
+            Value = "less than",
+            Selected = true
+        });
+    }
+
+
+@using (Html.BeginForm("SubscribedSuccessfully", "Home")) {
+    <div>
+        <h3>Please select the stock you want to subscribe:</h3>
+        <!--@Html.DropDownList("MyDropDown", new SelectList(new[] { "AAPL", "DELL", "SLV","AMD","SINA","Gen","NVDA","IBM","INT","MCD" }))-->
+
+        @Html.Partial("subscribeChooseStockName", new FinalYearProject.Models.Topic.StockPrice())
+
+       
+
+        <br/><br />
+        <h4 style="font-family:'Times New Roman';font-style:italic">We will notify you when your price: </h4>
+        <div>
+            <!--@Html.Label("Price")<br/>-->
+            <h6>Requirement 1: </h6>@Html.DropDownListFor(model => model.firstFix, listItems1, "----")<br />
+            <h6>Requirement 2: </h6>@Html.DropDownListFor(model => model.prefixPrice, listItems3, "------")<br /><br />
+            <p>@Html.Label("Value Enter:")<br />@Html.EditorFor(model => model.priceValue)</p>
+           
+            @Html.Partial("notificationChannel", new FinalYearProject.Models.NotificationChannel())
+
+            <br />
+            <input class="btn btn-success" type="submit" value="Subscribe" />
+        </div>
+        
+    </div>
+}
+</body>
+</html>

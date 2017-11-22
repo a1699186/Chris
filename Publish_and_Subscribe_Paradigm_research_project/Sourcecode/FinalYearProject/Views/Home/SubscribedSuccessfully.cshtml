@@ -1,0 +1,26 @@
+﻿@model FinalYearProject.Models.User
+@{
+    ViewBag.Title = "SubscribedSuccessfully";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SubscribedSuccessfully</title>
+</head>
+<body style="text-align:center" class="jumbotron">
+    <div>
+        <h2>You have been successfully subscribed</h2><br />
+        <p style="font-style:italic">*Thanks for subscribing. We will notify you through email and/or phone once the value meet you expectation you have subscribed.</p>
+    </div>
+
+    <img src="~/Image/thank-you.jpg" width="400" height="280" alt="Stock Price Current Value" /> <br />
+
+    <div>
+        <h3>Still one want to subscribe another stock? @Html.ActionLink("Click here", "StockPriceCurrentValue", "Home")</h3>
+    </div>
+</body>
+</html>

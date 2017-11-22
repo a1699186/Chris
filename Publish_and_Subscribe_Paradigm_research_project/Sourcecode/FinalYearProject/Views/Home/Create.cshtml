@@ -1,0 +1,30 @@
+﻿@model FinalYearProject.Models.User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body style="text-align:center">
+    
+    @using (Html.BeginForm("Create", "Home")) {
+    <div> 
+        <br/><br />
+        <p>
+            @Html.Label("User Name: ")
+            <br/>
+            @Html.EditorFor(model => model.userName)
+        </p>
+        <br />
+        <p>
+            @Html.Label("Password: ")
+            <br/>
+        @Html.EditorFor(model => model.password)
+    </p>
+    </div>
+    <input class="btn btn-success" type="submit" value="Register" />
+    }
+</body>
+</html>

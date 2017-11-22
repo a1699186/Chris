@@ -1,0 +1,119 @@
+﻿@model FinalYearProject.Models.Expression.StockPriceExpression
+@{
+    ViewBag.Title = "subscribeExpression";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>subscribeExpression</title>
+</head>
+<body style="text-align:center">
+    <!--@{
+        List<SelectListItem> listItems1 = new List<SelectListItem>();
+        listItems1.Add(new SelectListItem
+             {
+                 Text = "Not",
+                 Value = "Not",
+                 Selected = true
+             });
+    }
+
+    @{
+        List<SelectListItem> listItems2 = new List<SelectListItem>();
+        listItems2.Add(new SelectListItem
+             {
+                 Text = "and",
+                 Value = "and"
+             });
+        listItems2.Add(new SelectListItem
+             {
+                 Text = "or",
+                 Value = "or",
+                 Selected = true
+             });
+        listItems2.Add(new SelectListItem
+             {
+                 Text = "exclusive or",
+                 Value = "exclusive or"
+             });
+    }
+    @{
+        List<SelectListItem> listItems3 = new List<SelectListItem>();
+        listItems3.Add(new SelectListItem
+             {
+                 Text = "more than",
+                 Value = "more than"
+             });
+        listItems3.Add(new SelectListItem
+             {
+                 Text = "equal or less than",
+                 Value = "equal or less than",
+                 Selected = true
+             });
+        listItems3.Add(new SelectListItem
+             {
+                 Text = "equal of more than",
+                 Value = "equal of more than"
+             });
+        listItems3.Add(new SelectListItem
+        {
+            Text = "less than",
+            Value = "less than"
+        });
+    }
+
+@using (Html.BeginForm("Create", "Home")) {
+    <div> 
+        <h2>Subscription</h2><br/>
+
+        <div><p><h4>Topic:</h4> @Html.DropDownList("MyDropDown", new SelectList(new[] { "Stock Price", "Presence of Water", "Coordination" }))</p></div>
+
+
+        <br/><br />
+
+        <div>
+            @Html.Label("Price")
+            @Html.DropDownListFor(model => model.firstFix, listItems1)
+            @Html.DropDownListFor(model => model.prefixPrice, listItems3, "----")
+            @Html.EditorFor(model => model.priceValue)
+
+            <br/><br/>
+            <input class="btn btn-success" type="submit" value="Subscribe" />
+     
+        </div>
+
+    </div>
+}-->
+
+    <br/><br /><br />
+    <div class="row">
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">
+            <img src="~/Image/PresenceOfWater.jpg" width="300" height="180" alt="Stock Price Current Value" usemap="#planetmap" />
+            <p>Presence of Water</p>
+        </div>
+
+        <div class="col-md-3">
+            <p style="text-align:center">
+                <a href="\Home\StockPriceCurrentValue">
+                    <img src="~/Image/StockPrice.png" width="300" height="180" alt="Stock Price Current Value" /> <br />
+                    @Html.ActionLink("Stock Price", "StockPriceCurrentValue", "Home")
+                </a>
+                <!--<area shape="rect" coords="0,0,82,126" alt="Sun" href="\Home\StockPriceCurrentValue">-->
+            </p>
+        </div>
+
+        <div class="col-md-3">
+            <img src="~/Image/PresenceOfWater.jpg" width="300" height="180" alt="Stock Price Current Value" usemap="#planetmap">
+            <p>Air traffic Control Coordinations</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

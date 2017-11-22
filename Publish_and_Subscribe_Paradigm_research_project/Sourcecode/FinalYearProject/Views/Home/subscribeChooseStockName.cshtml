@@ -1,0 +1,104 @@
+﻿@model FinalYearProject.Models.Topic.StockPrice
+
+@{
+    ViewBag.Title = "SubscriberPage";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>subscribeChooseStockName</title>
+</head>
+<body>
+    @{
+        List<SelectListItem> StockName = new List<SelectListItem>();
+        StockName.Add(new SelectListItem
+             {
+                 Text = "AAPL",
+                 Value = "AAPL"
+             });
+        StockName.Add(new SelectListItem
+             {
+                 Text = "MSFT",
+                 Value = "MSFT",
+                 Selected = true
+             });
+        StockName.Add(new SelectListItem
+             {
+                 Text = "INTC",
+                 Value = "INTC"
+             });
+        StockName.Add(new SelectListItem
+        {
+            Text = "IBM",
+            Value = "IBM"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "RVBD",
+            Value = "RVBD"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "AMZN",
+            Value = "AMZN"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "BIDU",
+            Value = "BIDU"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "SINA",
+            Value = "SINA"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "NVDA",
+            Value = "NVDA"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "AMD",
+            Value = "AMD"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "WMT",
+            Value = "WMT"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "GLD",
+            Value = "GLD"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "SLV",
+            Value = "SLV"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "V",
+            Value = "V"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "MCD",
+            Value = "MCD"
+        });
+        StockName.Add(new SelectListItem
+        {
+            Text = "FAS",
+            Value = "FAS"
+        });
+    }
+
+    @Html.DropDownListFor(model => model.name, StockName, "----Select Stock Type----")
+
+
+</body>
+</html>

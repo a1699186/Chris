@@ -1,0 +1,25 @@
+﻿@model FinalYearProject.Models.NotificationChannel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>notificationChannel</title>
+</head>
+<body>
+    <div> 
+        <p>
+        @Html.Label("Email:")<br />
+        
+        @Html.EditorFor(model => model.email)</p>
+
+        <p>@Html.Label("Phone No:")<br />
+
+        @Html.EditorFor(model => model.phoneNumber)</p>
+    </div>
+</body>
+</html>
