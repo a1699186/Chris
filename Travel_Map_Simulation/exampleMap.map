@@ -1,0 +1,16 @@
+place s1 50 109
+place s2 130 120
+place s3 220 230
+place s4 320 40
+place s5 380 50
+place s6 120 300
+
+road s1 road1 7 s2
+road s1 road1 2 s3
+road s2 road1 8 s4
+road s3 road1 3 s4
+road s1 road1 2 s6
+road s6 road1 2 s4
+
+start s1
+end s4
